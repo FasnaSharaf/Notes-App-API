@@ -174,7 +174,7 @@ The API exposes the following endpoints:
 All endpoints return JSON data.
 ## Conclusion
 
-In this project, we have created a simple notes app with a REST API and packaged it using Docker. We have used Node.js and MongoDB to implement basic CRUD functionality for the notes, and used Docker to make it easy to deploy the application in any environment that supports
+In this project, we have created a simple notes app with a REST API and packaged it using Docker. We have used Node.js and MongoDB to implement basic CRUD functionality for the notes, and used Docker to make it easy to deploy the application in any environment that supports Docker.
 
 
 
