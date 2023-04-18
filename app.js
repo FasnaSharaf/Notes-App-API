@@ -1,11 +1,22 @@
 const express = require('express');
 const connectDB=require('./db');
 const Note = require('./notes');
+const mongoose = require('mongoose');
 
 const app = express();
 app.use(express.json());
 
 connectDB();
+
+app.get('/health', (req, res) => {
+    if(mongoose.connection.readyState === 1){
+      res.status(200).send('Database connection success');
+    }
+    else {
+      res.status(400).send('Database connection failed');
+    }
+  });
+
 
 app.get('/notes', async (req, res) => {
     try {
