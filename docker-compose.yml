@@ -15,7 +15,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - C:\mongo-data:/data/db
+      - /home/ubuntu/mongo-data:/data/db:rw
   
   app:
     build: .
