@@ -7,7 +7,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     healthcheck:
-      test: ["CMD-SHELL", "mongo --eval \"db.adminCommand('ping')\""]
+      test: echo 'db.runCommand("ping").ok'| mongo --quiet
       interval: 30s
       timeout: 10s
       retries: 3
