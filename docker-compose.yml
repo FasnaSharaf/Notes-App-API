@@ -15,7 +15,7 @@ services:
       - 27018:27017
     volumes:
       - /home/ubuntu/mongo-data:/data/db
-  
+
   app:
     build: .
     restart: always
@@ -28,5 +28,11 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-volumes:
-  mongo-data:
+
+  autoheal:
+    restart: always
+    image: willfarrell/autoheal
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=all
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
