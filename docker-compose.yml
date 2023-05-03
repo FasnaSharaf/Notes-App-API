@@ -12,7 +12,7 @@ services:
       timeout: 10s
       retries: 3
     ports:
-      - 27017:27017
+      - 27018:27017
     volumes:
       - /home/ubuntu/mongo-data:/data/db
   
