@@ -1,6 +1,6 @@
 //code to connect express application to mongodb
 const mongoose = require('mongoose');
-const uri = "mongodb://root:example123@mongo:27017/mydatabase";
+const uri = "mongodb://root:example123@RESTapi:27017/";
 const connectDB = async () => {
     try {
         await mongoose.connect(uri , 
