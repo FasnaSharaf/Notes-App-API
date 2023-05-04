@@ -36,3 +36,19 @@ services:
       - AUTOHEAL_CONTAINER_LABEL=all
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      
+  
+   nginx:
+    image: nginx:latest
+    restart: always
+    ports:
+      - '80:80'
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - /etc/nginx/conf.d
+      - /var/log/nginx
+      - /var/www/html:/usr/share/nginx/html
