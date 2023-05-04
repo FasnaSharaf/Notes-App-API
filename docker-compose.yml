@@ -38,7 +38,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       
   
-   nginx:
+  nginx:
     image: nginx:latest
     restart: always
     ports:
