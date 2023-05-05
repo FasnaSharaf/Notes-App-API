@@ -8,6 +8,10 @@ app.use(express.json());
 
 connectDB();
 
+app.get('/', (req, res) => {
+   res.send('Notes API')
+})
+
 app.get('/health', (req, res) => {
     if(mongoose.connection.readyState === 1){
       res.status(200).send('Database connection success');
@@ -72,8 +76,8 @@ app.delete('/notes/:id', async (req, res) => {    //http://localhost:3000/notes/
     }
 });
 
-const port = 5000;
+const port = 3000;
 
 app.listen(port, () => {
-    console.log("API server started on port 5000");
+    console.log("API server started on port 3000");
 })
